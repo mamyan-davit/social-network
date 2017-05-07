@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Training 2</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<textarea name="" id="textarea" cols="30" rows="10" maxlength="55"></textarea>
+	<div id="textarea_feedback"></div>
+
+	<script src="jquery_3.0.0.js"></script>
+	<script>
+		$(document).ready(function(){
+			var text_max = 55;
+			$('#textarea_feedback').html(text_max + ' ' + 'characters remaining');
+			$('#textarea').keyup(function(){
+				var text_length = $('#textarea').val().length;
+				var text_remain = text_max - text_length;
+				$('#textarea_feedback').html(text_remain + ' ' + 'characters remaining');
+			});
+		})
+	</script>
+</body>
+</html>
